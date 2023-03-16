@@ -1,0 +1,54 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.hide{
+    display:none;
+}
+section.gdpr-consent {
+    background: rgba(240,240,240, 0.9);
+    position: fixed;
+    padding: 1em;
+    border-radius: 10px;
+    bottom: 5vh;
+    z-index: 9;
+}
+.gdpr-consent > .gdpr-consent__choice{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.gdpr-consent > .gdpr-consent__choice > button{
+    background: crimson;
+    color: white;
+    padding: 1em 2em;
+    border-radius: 5px;
+    font-weight: bold;
+}
+    @media (min-width: 769px) {
+        .profile .banner {
+        display: flex;
+    }
+
+        .profile .banner * {
+            width: 50%;
+        }
+}

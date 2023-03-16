@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProfileViewModel
+@{
+    ViewData["Title"] = "Profile";
+}
+<body class="profile">
+  
+    <section class="banner">
+        <div class="banner-content">
+            <h1 class="banner-content__title">@Model.name</h1>
+            <p class="banner-content__text">@Model.description
+            </p>
+        </div>
+        <img src="~/Images/@Model.ImageURL" />
+    </section>
+    <section class="skills">
+        <h3>Skills</h3>
+        <ul>
+            @foreach (var item in Model.skills)
+            {
+                <li>@item.name: @item.rating.ToString()</li>
+            }
+
+        </ul>
+    </section>
+
+
+    <div class="container">
+
+        <h1 id="content-gpdr-consent-status"></h1>
+
+    <div class="content-gdpr-not-chosen hide">
+        <p>Deze content wordt alleen getoond als gdrp consent niet is gekozen.</p>
+    </div>
+
+    <div class="content-gdpr-accept hide">
+        <p>Deze content wordt alleen getoond als gdrp is geaccepteerd.</p>
+    </div>
+
+    <div class="content-gdpr-reject hide">
+        <p>Deze content wordt alleen getoond als gdrp is verworpen.</p>
+    </div>
+
+
+</div>
+ 
+</body>

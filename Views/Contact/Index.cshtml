@@ -1,0 +1,121 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ProfileViewModel
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('recaptcha-div', {
+          'sitekey' : '6LdWabUUAAAAAOjwtemOAbQ5wcipR4UoAWNWA0uJ'
+        });
+      };
+    </script>
+<h1>Contact @Model.name</h1>
+<form method="POST" action="/Contact/Result">
+    <input type="text" name="Naam" placeholder="Uw naam" maxlength="40" required/>
+    <input type="number" name="Id" placeholder="Id" />
+     <div id="recaptcha-div" class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LdWabUUAAAAAOjwtemOAbQ5wcipR4UoAWNWA0uJ"></div>
+
+    <input type="submit" id="submitBtn" value="Verzenden" disabled/>
+
+</form>
+
+
+@*<form novalidate action="http://localhost:3000/form" method="post" class="form-email">
+
+    <label for="email">
+        <span>Emailadres:</span>
+        <input type="email" name="email" id="email" required minlength="8">
+        <span class="error" aria-live="polite"></span>
+    </label>
+    
+        <label for="onderwerp">
+            <span>Onderwerp:</span>
+            <input type="text" name="onderwerp" id="onderwerp" maxlength="200"/>
+            </label>
+        <label for="bericht">
+            <span>Bericht: </span>
+            <textarea name="bericht" id="bericht" maxlength="600"></textarea>
+        </label>
+    <div id="recaptcha-div" class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LdWabUUAAAAAOjwtemOAbQ5wcipR4UoAWNWA0uJ"></div>
+
+    <input type="submit" id="submitBtn" value="Verstuur!" disabled>
+
+</form>*@
+
+<script>
+    const form = document.querySelector("form");
+const email = document.getElementById("email");
+const bericht = document.getElementById("bericht");
+const onderwerp = document.getElementById("onderwerp");
+const emailError = document.querySelector("#email + span.error");
+
+email.addEventListener("input", (event) => {
+    // Each time the user types something, we check if the
+    // form fields are valid.
+
+    if (email.validity.valid) {
+        // In case there is an error message visible, if the field
+        // is valid, we remove the error message.
+        emailError.textContent = ""; // Reset the content of the message
+        emailError.className = "error"; // Reset the visual state of the message
+    } else {
+        // If there is still an error, show the correct error
+        showError();
+    }
+});
+
+form.addEventListener("submit", async (event) => {
+    // Then we prevent the form from being sent by canceling the event
+    event.preventDefault();
+
+    // if the email field is valid, we let the form submit
+    if (!email.validity.valid) {
+        // If it isn't, we display an appropriate error message
+        showError();
+        return;
+    }
+
+    let response = await fetch('http://localhost:3000/form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({email: email.value, onderwerp: onderwerp.value, bericht: bericht.value})
+    });
+
+    let data = await response.json();
+
+    alert(JSON.stringify(data));
+   
+});
+
+function showError() {
+    if (email.validity.valueMissing) {
+        // If the field is empty,
+        // display the following error message.
+        emailError.textContent = "You need to enter an e-mail address.";
+    } else if (email.validity.typeMismatch) {
+        // If the field doesn't contain an email address,
+        // display the following error message.
+        emailError.textContent = "Entered value needs to be an e-mail address.";
+    } else if (email.validity.tooShort) {
+        // If the data is too short,
+        // display the following error message.
+        emailError.textContent = `E-mail should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
+    }
+
+    // Set the styling appropriately
+    emailError.className = "error active";
+}
+
+function recaptchaCallback(){
+    $('#submitBtn').removeAttr('disabled');
+}
+</script>
+<script type="text/javascript">
+  var onloadCallback = function() {
+    alert("grecaptcha is ready!");
+  };
+</script>

@@ -1,0 +1,73 @@
+﻿
+body {
+    background-image: url("/Images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+    background: #ffffff;
+}
+
+.game {
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.game-person {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: relative;
+    top: 150px;
+    
+}
+.game-object{
+    width: 30px;
+    height: 30px;
+    background: blue;
+    position: relative;
+    top: 60%;
+}
+.jump {
+    animation: jump 0.3s linear;
+    -webkit-animation: jump 0.3s linear;
+}
+
+.moving{
+    animation: moving 1.3s linear infinite;
+    -webkit-animation: moving 1.3s linear infinite;
+}
+    .game-person img,
+    .game-object img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+@keyframes jump {
+    0% {
+        top: 150px;
+    }
+    30% {
+        top: 130px;
+    }
+    50%{
+        top: 80px;
+    }
+    80% {
+        top: 130px;
+    }
+    100%{
+        top: 150px;
+    }
+}
+@keyframes moving{
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: 0;
+    }
+}
