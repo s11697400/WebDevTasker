@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Setup.DataContext;
 
@@ -10,9 +11,11 @@ using Setup.DataContext;
 namespace Setup.Migrations
 {
     [DbContext(typeof(PersonDatabaseContext))]
-    partial class PersonDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20230321110711_FriendMigration")]
+    partial class FriendMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Setup.DataContext;
 using Microsoft.AspNetCore.Identity;
 using Setup.Areas.Identity.Data;
+using Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,7 @@ builder.Services.AddDbContext<PersonDatabaseContext>(options => options.UseSqlSe
 
 builder.Services.AddDefaultIdentity<AuthUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AuthContext>();
 builder.Services.AddDbContext<AuthContext>(options => options.UseSqlServer(connectionString));
-
+builder.Services.AddSignalR();
 /*builder.Services.AddDefaultIdentity<AuthUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AuthContext>();*/
 var app = builder.Build();
 
@@ -39,4 +40,5 @@ app.MapControllerRoute(
 app.MapGet("/GetThijs", () => "Hello Wereld!");
 app.MapPost("/API", () => "THIS IS POST");
 app.MapRazorPages();
+app.MapHub<ChatHub>("/chatHub");
 app.Run();

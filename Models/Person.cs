@@ -15,11 +15,14 @@ namespace Setup.Models
         [Required]
         public string Email { get; set; }
         
+        public List<Person> Friends { get; set; }
+
         public Person(){}
-        public Person(string name, int id)
+        public Person(string name, int id, List<Person> friends)
         {
             Username = name;
             Id = id;
+            Friends = friends;
         }
     }
 }

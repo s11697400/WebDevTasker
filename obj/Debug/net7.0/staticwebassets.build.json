@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lEWU4OIDsp7axDFTGmhbx3V7TeTQPdUInEdr7BF/kq0=",
+  "Hash": "ld3MKYSFWgsrC9GYQs8Ca5XKBJ4kQhbOX9cgVfmg9T0=",
   "Source": "Setup",
   "BasePath": "_content/Setup",
   "Mode": "Default",
@@ -1139,6 +1139,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\Thijs.jpg"
     },
     {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\chat.js",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "js/chat.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\chat.js"
+    },
+    {
       "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\gdpr.js",
       "SourceId": "Setup",
       "SourceType": "Discovered",
@@ -1154,6 +1171,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\gdpr.js"
+    },
+    {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "js/signalr/dist/browser/signalr.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\signalr\\dist\\browser\\signalr.js"
+    },
+    {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "js/signalr/dist/browser/signalr.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js"
     },
     {
       "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\site.js",
@@ -2140,6 +2191,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\lib\\signalr.js\\jquery.signalR.js",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "lib/signalr.js/jquery.signalR.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\signalr.js\\jquery.signalR.js"
+    },
+    {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\lib\\signalr.js\\jquery.signalR.min.js",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "lib/signalr.js/jquery.signalR.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\signalr.js\\jquery.signalR.min.js"
     }
   ]
 }

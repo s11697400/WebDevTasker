@@ -344,3 +344,4 @@ C:\Users\tsoep\windesheim\Setup v1.0\Setup\Setup\bin\Debug\net7.0\Microsoft.Exte
 C:\Users\tsoep\windesheim\Setup v1.0\Setup\Setup\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\tsoep\windesheim\Setup v1.0\Setup\Setup\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 C:\Users\tsoep\windesheim\Setup v1.0\Setup\Setup\obj\Debug\net7.0\Setup.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\tsoep\windesheim\Setup v1.0\Setup\Setup\bin\Debug\net7.0\libman.json
