@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\js\\chat.js"
     },
     {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\components\\friends-higschore.js",
+      "PackagePath": "staticwebassets\\js\\components\\friends-higschore.js"
+    },
+    {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\friends.js",
+      "PackagePath": "staticwebassets\\js\\friends.js"
+    },
+    {
       "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\gdpr.js",
       "PackagePath": "staticwebassets\\js\\gdpr.js"
     },

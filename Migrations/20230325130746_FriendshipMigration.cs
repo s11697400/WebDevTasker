@@ -5,7 +5,7 @@
 namespace Setup.Migrations
 {
     /// <inheritdoc />
-    public partial class FriendMigration : Migration
+    public partial class FriendshipMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,11 +34,50 @@ namespace Setup.Migrations
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");
+
+            migrationBuilder.CreateTable(
+                name: "Friends",
+                columns: table => new
+                {
+                    UserId1 = table.Column<int>(type: "int", nullable: false),
+                    UserId2 = table.Column<int>(type: "int", nullable: false),
+                    User1Id = table.Column<int>(type: "int", nullable: false),
+                    User2Id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Friends", x => new { x.UserId1, x.UserId2 });
+                    table.ForeignKey(
+                        name: "FK_Friends_Persons_User1Id",
+                        column: x => x.User1Id,
+                        principalTable: "Persons",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_Friends_Persons_User2Id",
+                        column: x => x.User2Id,
+                        principalTable: "Persons",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Friends_User1Id",
+                table: "Friends",
+                column: "User1Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Friends_User2Id",
+                table: "Friends",
+                column: "User2Id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Friends");
+
             migrationBuilder.DropColumn(
                 name: "Email",
                 table: "Persons");

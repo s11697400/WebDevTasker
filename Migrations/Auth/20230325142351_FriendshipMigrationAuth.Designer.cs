@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Setup.Areas.Identity.Data;
 
@@ -11,9 +12,11 @@ using Setup.Areas.Identity.Data;
 namespace Setup.Migrations.Auth
 {
     [DbContext(typeof(AuthContext))]
-    partial class AuthContextModelSnapshot : ModelSnapshot
+    [Migration("20230325142351_FriendshipMigrationAuth")]
+    partial class FriendshipMigrationAuth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -211,9 +214,6 @@ namespace Setup.Migrations.Auth
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<int>("highScore")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -243,12 +243,6 @@ namespace Setup.Migrations.Auth
                         .HasColumnType("nvarchar(450)")
                         .HasColumnOrder(1);
 
-                    b.Property<string>("UserName1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName2")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("FriendshipId");
 
                     b.HasIndex("UserId1");
@@ -263,7 +257,7 @@ namespace Setup.Migrations.Auth
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -272,7 +266,7 @@ namespace Setup.Migrations.Auth
                     b.HasOne("Setup.Areas.Identity.Data.AuthUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -281,7 +275,7 @@ namespace Setup.Migrations.Auth
                     b.HasOne("Setup.Areas.Identity.Data.AuthUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -290,13 +284,13 @@ namespace Setup.Migrations.Auth
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Setup.Areas.Identity.Data.AuthUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -305,7 +299,7 @@ namespace Setup.Migrations.Auth
                     b.HasOne("Setup.Areas.Identity.Data.AuthUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -314,12 +308,12 @@ namespace Setup.Migrations.Auth
                     b.HasOne("Setup.Areas.Identity.Data.AuthUser", "User1")
                         .WithMany("ListOfPerson")
                         .HasForeignKey("UserId1")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("Setup.Areas.Identity.Data.AuthUser", "User2")
                         .WithMany("FriendsOfPerson")
                         .HasForeignKey("UserId2")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("User1");
 

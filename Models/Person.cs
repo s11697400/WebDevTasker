@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Setup.Models
 {
@@ -9,16 +10,20 @@ namespace Setup.Models
         public string Username { get; set; }
         [Required]
         public string Password { get; set; }
+
+
         
-        
+
         public int Id { get; set; }
         [Required]
         public string Email { get; set; }
-        
-        public List<Person> Friends { get; set; }
+
+        [InverseProperty("User1")]
+        public List<Friendship> Friends { get; set; }
+
 
         public Person(){}
-        public Person(string name, int id, List<Person> friends)
+        public Person(string name, int id, List<Friendship> friends)
         {
             Username = name;
             Id = id;

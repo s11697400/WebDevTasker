@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Setup.Areas.Identity.Data;
 
@@ -11,9 +12,11 @@ using Setup.Areas.Identity.Data;
 namespace Setup.Migrations.Auth
 {
     [DbContext(typeof(AuthContext))]
-    partial class AuthContextModelSnapshot : ModelSnapshot
+    [Migration("20230325160752_HighScoreMigration")]
+    partial class HighScoreMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -242,12 +245,6 @@ namespace Setup.Migrations.Auth
                     b.Property<string>("UserId2")
                         .HasColumnType("nvarchar(450)")
                         .HasColumnOrder(1);
-
-                    b.Property<string>("UserName1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName2")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FriendshipId");
 

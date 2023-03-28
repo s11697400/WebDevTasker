@@ -3,6 +3,7 @@ using Setup.DataContext;
 using Microsoft.AspNetCore.Identity;
 using Setup.Areas.Identity.Data;
 using Hubs;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,14 @@ builder.Services.AddDbContext<PersonDatabaseContext>(options => options.UseSqlSe
 builder.Services.AddDefaultIdentity<AuthUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AuthContext>();
 builder.Services.AddDbContext<AuthContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddSignalR();
-/*builder.Services.AddDefaultIdentity<AuthUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AuthContext>();*/
+builder.Services.AddSession(options =>
+{
+    options.Cookie.Name = ".AdventureWorks.Session";
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.Cookie.IsEssential = true;
+});
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,18 +32,18 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseSession();
 
-app.MapControllerRoute(
+/*app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+    pattern: "{controller=Home}/{action=Index}/{id?}");*/
+app.MapDefaultControllerRoute();
 
 app.MapGet("/GetThijs", () => "Hello Wereld!");
 app.MapPost("/API", () => "THIS IS POST");

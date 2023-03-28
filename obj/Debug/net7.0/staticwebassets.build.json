@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ld3MKYSFWgsrC9GYQs8Ca5XKBJ4kQhbOX9cgVfmg9T0=",
+  "Hash": "0zX8kc1VzVbJ3UqclbLL4Vtt22Yh35xoqr0cV3wiR3Q=",
   "Source": "Setup",
   "BasePath": "_content/Setup",
   "Mode": "Default",
@@ -1154,6 +1154,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\chat.js"
+    },
+    {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\components\\friends-higschore.js",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "js/components/friends-higschore.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\components\\friends-higschore.js"
+    },
+    {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\friends.js",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "js/friends.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\friends.js"
     },
     {
       "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\gdpr.js",

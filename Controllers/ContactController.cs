@@ -17,7 +17,7 @@ namespace Setup.Controllers
             Console.WriteLine("RESULT CONTROLLER");
             Console.WriteLine(Naam);
             Console.WriteLine(Id.ToString());
-            Person p = new Person(Naam, Id);
+            Person p = new Person(Naam, Id, new List<Friendship>());
             Console.WriteLine(p.Username);
             PersonViewModel personViewModel = new PersonViewModel(p);
             Console.WriteLine(personViewModel.Name);

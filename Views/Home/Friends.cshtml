@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Friend dashboard";
+}
+@using Microsoft.AspNetCore.Identity
+@using Setup.Areas.Identity.Data
+
+@inject SignInManager<AuthUser> SignInManager
+
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <h2>Friends</h2>
+        <h3>
+            <br/>
+        
+            <br/></h3>
+    <friends-app user=@ViewBag.id></friends-app>
+
+        <template id="friends-app-tpl">
+        
+            <table>
+                <thead>
+                    <td>username</td>
+                    <td>Score</td>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </template>
+    }
+<template id="friends-item-tpl">
+    <tr>
+        <td data-bind="name">name</td>
+        <td data-bind="score">score</td>
+    </tr>
+       
+</template>
+
+    <script type="module" src="~/js/friends.js"></script>
