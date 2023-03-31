@@ -26,7 +26,13 @@ jobs:
 
       - name: Install dependencies
         run: dotnet restore
-
+      - name: UpdateDB
+        run: |
+          source ~/runjob.sh
+          cp ~/appsettings.json ~/temp/_work/WebDevTasker/WebDevTasker/Setup
+          cd ~/temp/_work/WebDevTasker/WebDevTasker/Setup
+          dotnet ef migrations add ${{github.run_attempt}}
+          dotnet ef database update
       - name: Build
         run: dotnet build --configuration Release --no-restore
 
