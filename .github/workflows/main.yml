@@ -5,6 +5,7 @@ on:
   # Triggers the workflow on push request event for the main branch
   push:    
     branches: [main]
+env:
 
 jobs:
   deploy:
