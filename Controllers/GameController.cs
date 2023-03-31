@@ -10,5 +10,6 @@ namespace Setup.Controllers
         {   
             return View(game);
         }
+
     }
 }

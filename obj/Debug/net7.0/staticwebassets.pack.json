@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Images\\Thijs.jpg"
     },
     {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\css\\friends.css",
+      "PackagePath": "staticwebassets\\css\\friends.css"
+    },
+    {
       "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\css\\game.css",
       "PackagePath": "staticwebassets\\css\\game.css"
     },
@@ -29,8 +33,20 @@
       "PackagePath": "staticwebassets\\js\\components\\friends-higschore.js"
     },
     {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\components\\friends-requests.js",
+      "PackagePath": "staticwebassets\\js\\components\\friends-requests.js"
+    },
+    {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\components\\friends-search.js",
+      "PackagePath": "staticwebassets\\js\\components\\friends-search.js"
+    },
+    {
       "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\friends.js",
       "PackagePath": "staticwebassets\\js\\friends.js"
+    },
+    {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\game.js",
+      "PackagePath": "staticwebassets\\js\\game.js"
     },
     {
       "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\gdpr.js",

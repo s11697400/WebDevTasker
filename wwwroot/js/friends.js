@@ -1,64 +1,91 @@
 ﻿import FriendsHighscore from './components/friends-higschore.js';
+import FriendsRequests from './components/friends-requests.js';
+import FriendsSearch from './components/friends-search.js';
+export default class FriendsApp extends HTMLElement {
+///VOOR ADD
 
-class FriendsApp extends HTMLElement {
-
+// {
+//     "userId1": "2758afa0-f909-4443-b838-d324486ad9ea",
+//     "userId2": "198f22ed-8f34-4643-b1fc-47b4173fa7f9",
+//     "userName1": "tsoepenberg@gmail.com",
+//     "userName2": "willem@gmail.com",
+//     "accepted": false
+// }
     shadowRoot;
     templateId = 'friends-app-tpl';
     elementId = 'Friends-app';
     friendList = {};
     user;
+    requestList = {};
     constructor() {
         super();
         this.user = this.getAttribute("user");
         console.log(this.user);
         this.shadowRoot = this.attachShadow({ mode: 'open' })
+
         this.getFriends();
 
-        this.connectedCallback();
     }
-
+    
     connectedCallback() {
         this.applyTemplate();
         this.attachStyling();
         
 
-
+               
         //student uitwerking
 
     }
+    SetFriends(data) {
+        console.log(data);
+           let arrayAccepted = [];
+           let arrayRequest= [];
+        data.forEach(element => {
+            if(element["accepted"]){
+                arrayAccepted.push(element);
+            }
+            else{
+                arrayRequest.push(element);
+            }
+        });
+    
+    
+        this.friendList = arrayAccepted;
+        this.friendList.forEach(element => {
+                const item = new FriendsHighscore(element);
+            this.shadowRoot.querySelector(".table-friends--body").appendChild(item);
+            });
+            this.requestList = arrayRequest;
+            console.log(this.requestList);
+            this.requestList.forEach(element => {
+                const item = new FriendsRequests(element);
+                this.shadowRoot.querySelector(".table-requests--body").appendChild(item);
+            })
+        }
     getFriends() {
         //fetch...
         if (Object.keys(this.friendList).length === 0) {
-            console.log("if passed");
             const data = fetch("/api/Friendships/" + this.user).then((response) => response.json())
                 .then((data) => this.SetFriends(data));
         } else {
-            console.log("else passed");
             this.SetFriends(this.friendList);
         }
         //student uitwerking
     }
-    SetFriends(data) {
-       
-        this.friendList = data;
-        console.log(data);
-        console.log(this.friendList);
-        const item = new FriendsHighscore(this.friendList);
-        this.shadowRoot.querySelector("tbody").appendChild(item);
-    }
+ 
     applyTemplate() {
         let appTemplate = document.getElementById(this.templateId);
       let clone = appTemplate.content.cloneNode(true);
         this.shadowRoot.appendChild(clone);
-       
-        //clone template an voeg toe aan shadowRoot
-        //student uitwerking
-
+        const item = new FriendsSearch(this.user);
+        this.shadowRoot.querySelector(".search-friends--body").appendChild(item);
     }
 
     // app.js
     attachStyling() {
         const linkElem = document.createElement("link");
+        linkElem.setAttribute("rel", "stylesheet");
+        linkElem.setAttribute("href", "/css/friends.css");
 
         this.shadowRoot.appendChild(linkElem);
     }
@@ -66,3 +93,5 @@ class FriendsApp extends HTMLElement {
 }
 
 customElements.define('friends-app', FriendsApp);
+
+export {FriendsApp};

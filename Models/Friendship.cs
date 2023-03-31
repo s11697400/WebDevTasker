@@ -10,8 +10,8 @@ namespace Setup.Models
     public class Friendship
     {
 
-        public virtual AuthUser User1 { get; set; }
-        public virtual AuthUser User2 { get; set; }
+        public virtual AuthUser? User1 { get; set; }
+        public virtual AuthUser? User2 { get; set; }
         [InverseProperty("AuthUser")]
         [ForeignKey("UserId1")]
         [Key, Column(Order = 0)]
@@ -27,6 +27,7 @@ namespace Setup.Models
         [InverseProperty("AuthUser")]
         public string? UserName2 { get; set; }
         public int? FriendshipId { get; set; }
+        public bool? accepted { get; set; }
         
         public Friendship()
         {

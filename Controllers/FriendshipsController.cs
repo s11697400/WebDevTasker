@@ -53,56 +53,19 @@ namespace Setup.Controllers
             {
                 return NotFound();
             }
+
             return await _context.Friends.ToListAsync();
         }
 
         // GET: api/Friendships/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Friendship>> GetFriendship(string? id)
+        public async Task<ActionResult<List<Friendship>>> GetFriendship(string? id)
         {
             if (_context.Friends == null)
             {
                 return NotFound();
             }
-            /* AuthUser user1 = findUser(id);*/
-
-            /*  if(_context.authUsers != null)
-              {
-              *//*    var authuserfriends = _context.Friends.Where(f => f.UserId1 == id).Join(_context.authUsers,
-                      f => f.UserId1,
-                      u => u.Id,
-                      (f, u) => new
-                      {
-                          f = f,
-                          f.UserName1 = u.UserName
-                      }
-                 ) ;*//*
-              var authuserfriends = from friends in _context.Friends
-                                     join users in _context.authUsers on friends.UserId1 equals users.Id
-                                     where friends.UserId1 == id
-                                     select new { Friendship = friends, AuthUser = users };
-                  if (authuserfriends != null)
-                  {
-                      string jsonauth = JsonConvert.SerializeObject(_context.authUsers, Formatting.Indented, new JsonSerializerSettings
-                      {
-                          ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                      });
-                      Console.WriteLine(jsonauth);
-                      Console.WriteLine(_context.authUsers.FirstOrDefaultAsync().Result.ToJson());
-                  }
-                  else
-                  {
-                      Console.WriteLine("AUTH USER NOT FOUND !!!!!!!!!!!!!!!!!!!");
-                  }
-              }*/
-
-
-
-            /*
-                        var friendship = _context.Friends.Where(f => f.UserId1 == id).Include(c => c.User1).ForEachAsync(c => {
-                            c.User2 = _context.authUsers.FindAsync(c.UserId2).Result;
-                            }
-                        , CancellationToken.None)*/
+    
             await _context.Friends.Where(f => f.UserId1 == id).ForEachAsync(async (f) =>
            {
                var user = findUserName(f.UserId1).Result;
@@ -110,16 +73,11 @@ namespace Setup.Controllers
                var user2 = findUserName(f.UserId2).Result;
 
                f.UserName2 = user2;
+               Console.WriteLine(user2);
 
            });
-            var friendship = _context.Friends.Where(f => f.UserId1 == id).FirstOrDefaultAsync().Result;
-            /* var friendship = await _context.Friends.Where(f => f.UserId1 == id);*/
-            /*var friendship = await _context.Friends.FindAsync(id);*/
-/*            string json = JsonConvert.SerializeObject(friendship, Formatting.Indented, new JsonSerializerSettings
-            {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            });*/
-           /* Console.WriteLine(json);*/
+            var friendship = await _context.Friends.Where(f => f.UserId1 == id).ToListAsync();
+       
             if (friendship == null)
             {
                 return NotFound();
@@ -132,14 +90,31 @@ namespace Setup.Controllers
         // PUT: api/Friendships/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFriendship(int? id, Friendship friendship)
+        public async Task<IActionResult> PutFriendship(int? id)
         {
-            if (id != friendship.FriendshipId)
+            Console.WriteLine("PUTTTTT");
+             if(_context.Friends.FindAsync(id).Result == null) 
             {
-                return BadRequest();
+                return NotFound();
             }
-
-            _context.Entry(friendship).State = EntityState.Modified;
+            var originalFriendship = _context.Friends.Where(f => f.FriendshipId == id).FirstOrDefault();
+            
+            var friendship = _context.Friends.Where(f => (f.UserId2 == originalFriendship.UserId2 && f.UserId1 == originalFriendship.UserId1)).FirstOrDefaultAsync().Result;
+            if (friendship == null)
+            {
+                return NotFound();
+            }
+            friendship.accepted = true;
+            _context.Friends.Update(friendship);
+            var user1 = _context.Users.FindAsync(originalFriendship.UserId1).Result;
+            var user2 = _context.Users.FindAsync(originalFriendship.UserId2).Result;
+            var friendshipNew = new Friendship(user2, user1);
+            if (friendshipNew == null)
+            {
+                return NotFound();
+            }
+            friendshipNew.accepted = true;
+            _context.Friends.Add(friendshipNew);
 
             try
             {
@@ -160,15 +135,23 @@ namespace Setup.Controllers
             return NoContent();
         }
 
-        // POST: api/Friendships
+        // POST: api/Friendships/
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Friendship>> PostFriendship(Friendship friendship)
         {
+          /*  Console.WriteLine(friendship.UserId1);
+            Console.WriteLine(friendship.UserName2);
+            return Ok(friendship.UserName2);*/
             if (_context.Friends == null)
             {
                 return Problem("Entity set 'PersonDatabaseContext.Friends'  is null.");
             }
+            if(friendship.UserId1== null)
+            {
+                return NoContent();
+            }
+            friendship.UserId2 = _context.authUsers.Where(f=> f.UserName == friendship.UserName2).FirstOrDefault().Id;
             _context.Friends.Add(friendship);
             try
             {
@@ -191,18 +174,25 @@ namespace Setup.Controllers
 
         // DELETE: api/Friendships/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteFriendship(string? id)
+        public async Task<IActionResult> DeleteFriendship(int? id)
         {
             if (_context.Friends == null)
             {
                 return NotFound();
             }
-            var friendship = await _context.Friends.FindAsync(id);
+            var originalFriendship = _context.Friends.Where(f => f.FriendshipId == id).FirstOrDefaultAsync().Result;
+            var friendship = _context.Friends.Where(f => (f.UserId2 == originalFriendship.UserId2 && f.UserId1 == originalFriendship.UserId1)).FirstOrDefaultAsync().Result;
             if (friendship == null)
             {
                 return NotFound();
             }
 
+            _context.Friends.Remove(friendship);
+            friendship = _context.Friends.Where(f => (f.UserId1 == originalFriendship.UserId2 && f.UserId2 == originalFriendship.UserId1)).FirstOrDefaultAsync().Result;
+            if (friendship == null)
+            {
+                return NotFound();
+            }
             _context.Friends.Remove(friendship);
             await _context.SaveChangesAsync();
 

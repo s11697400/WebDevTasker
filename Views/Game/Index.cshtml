@@ -16,8 +16,10 @@
         <img src="~/Images/@Model.ObjectImg" />
     </div>
 </div>
-
-<script>
+    <heart-element></heart-element>
+    <div class="score"> </div>
+<script type="module" src="~/js/game.js"></script>
+@* <script>
     const person = document.getElementById("game-person");
     
     function jump(){
@@ -38,5 +40,5 @@
         }
         
     });
-</script>
+</script> *@
 @*<button @onclick="Model.game.nextQuestion">NEXST</button>*@

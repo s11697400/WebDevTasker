@@ -13,31 +13,63 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <h2>Friends</h2>
-        <h3>
-            <br/>
+      <template id="friends-app-tpl">
         
-            <br/></h3>
-    <friends-app user=@ViewBag.id></friends-app>
+            <div class="table-friends">
+                <div class="table-friends--head">
+                    <div class="table-friends--cel">username</div>
+                    <div class="table-friends--cel">Score</div>
+                    <div class="table-friends--cel">Delete</div>
+                </div>
+                <div class="table-friends--body">
 
-        <template id="friends-app-tpl">
-        
-            <table>
-                <thead>
-                    <td>username</td>
-                    <td>Score</td>
-                </thead>
-                <tbody>
+                </div>
+            </div>
+            <div class="table-friends">
+                <h3>Requests</h3>
+                <div class="table-friends--head">
+                    <div class="table-friends--cel">username</div>
+                    <div class="table-friends--cel">Score</div>
+                    <div class="table-friends--cel">Accept</div>
+                    <div class="table-friends--cel">Delete</div>
+                </div>
+                <div class="table-requests--body">
 
-                </tbody>
-            </table>
+                </div>
+            </div>
+            <div class="search-friends">
+                <div class="search-friends--body">
+                    
+                </div>
+            </div>
         </template>
+    <friends-app user=@ViewBag.id />
+
+       
+        
     }
 <template id="friends-item-tpl">
-    <tr>
-        <td data-bind="name">name</td>
-        <td data-bind="score">score</td>
-    </tr>
+    <div class="friends-item--container">
+        <div class="table-friends--cel" data-bind="name">name</div>
+        <div class="table-friends--cel" data-bind="score">score</div>
+        <div class="table-friends--cel" data-bind="delete"><button>Delete</button></div> 
+    </div>
        
 </template>
-
+<template id="friends-search-tpl">
+    <div class="friends-search--container">
+        <div class="table-friends--cel"><input type="text" name="username" id="username" placeholder="username" /></div>
+        <div class="table-friends--cel" data-bind="Add"><button>Add</button></div> 
+    </div>
+       
+</template>
+<template id="friends-requests-tpl">
+    <div class="friends-requests--container">
+        <div class="table-friends--cel" data-bind="name">name</div>
+        <div class="table-friends--cel" data-bind="score">score</div>
+        <div class="table-friends--cel" data-bind="accept"><button>Accept</button></div> 
+        <div class="table-friends--cel" data-bind="delete"><button>Delete</button></div> 
+    </div>
+       
+</template>
     <script type="module" src="~/js/friends.js"></script>

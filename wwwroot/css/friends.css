@@ -1,0 +1,21 @@
+.table-friends--body{
+    display: flex;
+    flex-direction: column;
+}
+.table-friends--head,
+.table-friends--body,
+.friends-item--container,
+.friends-requests--container{
+    display: flex;
+    justify-content: space-between;
+}
+.table-friends{
+    padding: 1em;
+    border-radius: 10px;
+    background: #f8f8f8;
+}
+@media only screen and (min-width: 768px) {
+    .table-friends{
+        width: 50vw;
+    }
+}

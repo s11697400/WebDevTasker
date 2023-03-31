@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0zX8kc1VzVbJ3UqclbLL4Vtt22Yh35xoqr0cV3wiR3Q=",
+  "Hash": "XylIFj7YPVT3el6G/rA6hsgZLgJ+qPhynfuypLzZpeI=",
   "Source": "Setup",
   "BasePath": "_content/Setup",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Setup.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\css\\friends.css",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "css/friends.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\friends.css"
+    },
+    {
       "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\css\\game.css",
       "SourceId": "Setup",
       "SourceType": "Discovered",
@@ -1173,6 +1190,40 @@
       "OriginalItemSpec": "wwwroot\\js\\components\\friends-higschore.js"
     },
     {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\components\\friends-requests.js",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "js/components/friends-requests.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\components\\friends-requests.js"
+    },
+    {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\components\\friends-search.js",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "js/components/friends-search.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\components\\friends-search.js"
+    },
+    {
       "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\friends.js",
       "SourceId": "Setup",
       "SourceType": "Discovered",
@@ -1188,6 +1239,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\friends.js"
+    },
+    {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\game.js",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "js/game.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\game.js"
     },
     {
       "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\gdpr.js",
