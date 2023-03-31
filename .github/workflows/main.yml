@@ -32,7 +32,7 @@ jobs:
         run: dotnet restore
       - name: UpdateDB
         run: |
-          # source ~/actions-runner/run.sh
+          source ~/actions-runner/run.sh
           cp ~/appsettings.json ~/temp/_work/WebDevTasker/WebDevTasker/Setup
           cd ~/temp/_work/WebDevTasker/WebDevTasker/Setup
           dotnet ef migrations add ${{github.run_attempt}}
