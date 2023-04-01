@@ -36,7 +36,7 @@ class Heart extends HTMLElement {
     attachStyling(){
         const linkElem = document.createElement("link");
         linkElem.setAttribute("rel", "stylesheet");
-        linkElem.setAttribute("href", "heart.css");
+        linkElem.setAttribute("href", "/css/heart.css");
         this.shadowRoot.appendChild(linkElem);
     }
 

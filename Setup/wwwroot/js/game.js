@@ -58,8 +58,15 @@ var HeartElement = customElements.define('heart-element', Heart);
             default:
                 break;
         }
-     });
-
+    });
+    console.log(document.getElementById("upBtn"));
+    document.getElementById("upBtn").addEventListener('click', function () {
+        move('up');
+        console.log("UP");
+    });
+    document.getElementById("downBtn").addEventListener('click', function () {
+        move('down');
+    });
     function onHit(){
         amountOfLives -= 1;
         let heartContainer = document.querySelector("heart-element").shadowRoot.childNodes;

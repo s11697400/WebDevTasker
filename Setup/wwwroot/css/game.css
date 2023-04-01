@@ -114,3 +114,13 @@ img{
         left: 0;
     }
 }
+.button-control{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+@media (min-width: 768px){
+    .button-control{
+        display: none;
+    }
+}

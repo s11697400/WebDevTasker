@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fjdwfBZdw49YlmF40UG7ex06LhvTX+d2q9+F5s+IxIM=",
+  "Hash": "JB9BtWQLJYTi1RXHBYsG++9VDmyGt4cWOk++owSuSW0=",
   "Source": "Setup",
   "BasePath": "_content/Setup",
   "Mode": "Default",
@@ -1139,6 +1139,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\Images\\Comet.png",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "Images/Comet.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Comet.png"
+    },
+    {
       "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\Images\\heart.png",
       "SourceId": "Setup",
       "SourceType": "Discovered",
@@ -1156,6 +1173,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\heart.png"
     },
     {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\Images\\Person.png",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "Images/Person.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Person.png"
+    },
+    {
       "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\Images\\Thijs.jpg",
       "SourceId": "Setup",
       "SourceType": "Discovered",
@@ -1171,6 +1205,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Thijs.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\img\\Comet.png",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "img/Comet.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Comet.png"
+    },
+    {
+      "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\img\\Person.png",
+      "SourceId": "Setup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\",
+      "BasePath": "_content/Setup",
+      "RelativePath": "img/Person.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Person.png"
     },
     {
       "Identity": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\chat.js",

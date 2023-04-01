@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\Images\background.jpg" />
-    <Content Remove="wwwroot\Images\Comet.png" />
-    <Content Remove="wwwroot\Images\Person.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,8 +29,6 @@
 
   <ItemGroup>
     <Resource Include="wwwroot\Images\background.jpg" />
-    <Resource Include="wwwroot\Images\Comet.png" />
-    <Resource Include="wwwroot\Images\Person.png" />
     <Resource Include="wwwroot\Images\Thijs.jpg" />
   </ItemGroup>
 

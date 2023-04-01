@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\Setup.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\Images\\Comet.png",
+      "PackagePath": "staticwebassets\\Images\\Comet.png"
+    },
+    {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\Images\\Person.png",
+      "PackagePath": "staticwebassets\\Images\\Person.png"
+    },
+    {
       "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\Images\\Thijs.jpg",
       "PackagePath": "staticwebassets\\Images\\Thijs.jpg"
     },
@@ -27,6 +35,14 @@
     {
       "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\img\\Comet.png",
+      "PackagePath": "staticwebassets\\img\\Comet.png"
+    },
+    {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\img\\Person.png",
+      "PackagePath": "staticwebassets\\img\\Person.png"
     },
     {
       "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\chat.js",
