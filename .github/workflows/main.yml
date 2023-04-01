@@ -1,8 +1,6 @@
 name: CI
 
-env:
-  ## Sets environment variable
-  CI: FALSE
+
 
 # Controls when the workflow will run
 on:
