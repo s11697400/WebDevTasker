@@ -10,35 +10,12 @@
 
 <div class="game">
     <div class="game-person" id="game-person">
-        <img src="~/Images/@Model.ImageNameCharachter" />
+        <img src="~/Images/Person.png" />
     </div>
     <div class="game-object moving" id="game-object">
-        <img src="~/Images/@Model.ObjectImg" />
+        <img src="~/Images/Comet.png" />
     </div>
 </div>
     <heart-element></heart-element>
     <div class="score"> </div>
 <script type="module" src="~/js/game.js"></script>
-@* <script>
-    const person = document.getElementById("game-person");
-    
-    function jump(){
-        if(!person.classList.contains("jump")){
-            person.classList.add("jump");
-
-            setTimeout(() =>{
-                person.classList.remove("jump");
-            }, 300);
-        }
-    }
-    document.addEventListener("keydown", function(keydownEvent){
-        console.log(keydownEvent.key);
-
-        if(keydownEvent.key == "ArrowUp" || keydownEvent.key == " "){
-            console.log('jump');
-            jump();
-        }
-        
-    });
-</script> *@
-@*<button @onclick="Model.game.nextQuestion">NEXST</button>*@

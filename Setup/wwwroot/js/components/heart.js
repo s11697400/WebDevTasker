@@ -25,7 +25,7 @@ class Heart extends HTMLElement {
         const self = this.shadowRoot;
         for (let index = 0; index < this.amountHearts; index++) {            
             let heart = document.createElement("img");
-            heart.setAttribute("src", "/Images/Heart.png");
+            heart.setAttribute("src", "/Images/heart.png");
             heart.setAttribute("width", "50");
             heart.setAttribute("height", "50");
             self.appendChild(heart);
