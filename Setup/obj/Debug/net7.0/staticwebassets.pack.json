@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Images\\Thijs.jpg"
     },
     {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\Images\\heart.png",
+      "PackagePath": "staticwebassets\\Images\\heart.png"
+    },
+    {
       "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\css\\friends.css",
       "PackagePath": "staticwebassets\\css\\friends.css"
     },
@@ -39,6 +43,10 @@
     {
       "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\components\\friends-search.js",
       "PackagePath": "staticwebassets\\js\\components\\friends-search.js"
+    },
+    {
+      "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\components\\heart.js",
+      "PackagePath": "staticwebassets\\js\\components\\heart.js"
     },
     {
       "Id": "C:\\Users\\tsoep\\windesheim\\Setup v1.0\\Setup\\Setup\\wwwroot\\js\\friends.js",

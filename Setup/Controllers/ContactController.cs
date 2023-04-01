@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Setup.Models;
 
 namespace Setup.Controllers
 {
+    [Authorize]
     public class ContactController : Controller
     {
         public IActionResult Index(Developer developer)

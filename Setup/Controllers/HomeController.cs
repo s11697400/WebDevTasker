@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Setup.Areas.Identity.Data;
@@ -38,24 +39,6 @@ namespace Setup.Controllers
             return View();
         }
 
-        public IActionResult Friends()
-        {
-
-            if (HttpContext.User.Identity.IsAuthenticated)
-            {
-                AuthUser user2 = _context.Users.Where(c => c.UserName == HttpContext.User.Identity.Name).FirstOrDefault();
-
-
-
-                //First get user claims    
-                /*     var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
-
-                     //Filter specific claim    
-                     Console.WriteLine( claims?.FirstOrDefault(x => x.Type.Equals("UserName", StringComparison.OrdinalIgnoreCase))?.Value );*/
-                ViewBag.id = user2.Id;
-            }
-            return View();
-        }
         public IActionResult Privacy()
         {
             return View();
@@ -83,5 +66,25 @@ namespace Setup.Controllers
 
             }
         }
+        [Authorize]
+        public IActionResult Friends()
+        {
+
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                AuthUser user2 = _context.Users.Where(c => c.UserName == HttpContext.User.Identity.Name).FirstOrDefault();
+
+
+
+                //First get user claims    
+                /*     var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
+
+                     //Filter specific claim    
+                     Console.WriteLine( claims?.FirstOrDefault(x => x.Type.Equals("UserName", StringComparison.OrdinalIgnoreCase))?.Value );*/
+                ViewBag.id = user2.Id;
+            }
+            return View();
+        }
+      
     }
 }
