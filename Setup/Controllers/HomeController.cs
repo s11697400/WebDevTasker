@@ -74,13 +74,7 @@ namespace Setup.Controllers
             {
                 AuthUser user2 = _context.Users.Where(c => c.UserName == HttpContext.User.Identity.Name).FirstOrDefault();
 
-
-
-                //First get user claims    
-                /*     var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
-
-                     //Filter specific claim    
-                     Console.WriteLine( claims?.FirstOrDefault(x => x.Type.Equals("UserName", StringComparison.OrdinalIgnoreCase))?.Value );*/
+                ViewBag.score = user2.highScore;
                 ViewBag.id = user2.Id;
             }
             return View();
