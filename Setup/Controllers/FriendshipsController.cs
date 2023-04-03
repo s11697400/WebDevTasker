@@ -154,7 +154,9 @@ namespace Setup.Controllers
             {
                 return NoContent();
             }
-            friendship.UserId2 = _context.authUsers.Where(f=> f.UserName == friendship.UserName2).FirstOrDefault().Id;
+            var userId1 = _context.authUsers.Where(f => f.UserName == friendship.UserName2).FirstOrDefault().Id;
+            friendship.UserId2 = friendship.UserId1;
+            friendship.UserId1 = userId1;
             _context.Friends.Add(friendship);
             try
             {
@@ -187,15 +189,15 @@ namespace Setup.Controllers
             var friendship = _context.Friends.Where(f => (f.UserId2 == originalFriendship.UserId2 && f.UserId1 == originalFriendship.UserId1)).FirstOrDefaultAsync().Result;
             if (friendship == null)
             {
-                return NotFound();
+                
+                friendship = _context.Friends.Where(f => (f.UserId1 == originalFriendship.UserId2 && f.UserId2 == originalFriendship.UserId1)).FirstOrDefaultAsync().Result;
+                if (friendship == null)
+                {
+                    return NotFound();
+                }
             }
 
-            _context.Friends.Remove(friendship);
-            friendship = _context.Friends.Where(f => (f.UserId1 == originalFriendship.UserId2 && f.UserId2 == originalFriendship.UserId1)).FirstOrDefaultAsync().Result;
-            if (friendship == null)
-            {
-                return NotFound();
-            }
+         
             _context.Friends.Remove(friendship);
             await _context.SaveChangesAsync();
 

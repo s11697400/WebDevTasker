@@ -59,10 +59,8 @@ var HeartElement = customElements.define('heart-element', Heart);
                 break;
         }
     });
-    console.log(document.getElementById("upBtn"));
     document.getElementById("upBtn").addEventListener('click', function () {
         move('up');
-        console.log("UP");
     });
     document.getElementById("downBtn").addEventListener('click', function () {
         move('down');
@@ -71,14 +69,30 @@ var HeartElement = customElements.define('heart-element', Heart);
         amountOfLives -= 1;
         let heartContainer = document.querySelector("heart-element").shadowRoot.childNodes;
         heartContainer[heartContainer.length - 1].remove();
-        if(amountOfLives <= 0){
-            alert("GAME OVER!! Je score is: " + score);
-            //Herlaad pagina
-            location.reload();
+        if (amountOfLives <= 0) {
+            sendGameData();
         }
         
       
     } 
+    function sendGameData () {
+        var dataSend = new FormData();
+        dataSend.append("PlayerId", document.getElementById("playerId").value);
+        dataSend.append("score", score);
+
+        const output =  fetch('/api/Game/', {
+            method: 'PUT',
+            body: dataSend
+        }).then(response => putSuccess(response));
+    }
+    function putSuccess(response){
+    
+        if (response["ok"]) {
+            alert("GAME OVER!! Je score is: " + score);
+            //Herlaad pagina
+            location.reload();
+        }
+    }
     function move(direction) {    
             if(direction == "up"){
                 if(minY < getHeight()){
