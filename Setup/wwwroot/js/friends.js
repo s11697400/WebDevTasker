@@ -2,15 +2,7 @@
 import FriendsRequests from './components/friends-requests.js';
 import FriendsSearch from './components/friends-search.js';
 export default class FriendsApp extends HTMLElement {
-///VOOR ADD
 
-// {
-//     "userId1": "2758afa0-f909-4443-b838-d324486ad9ea",
-//     "userId2": "198f22ed-8f34-4643-b1fc-47b4173fa7f9",
-//     "userName1": "tsoepenberg@gmail.com",
-//     "userName2": "willem@gmail.com",
-//     "accepted": false
-// }
     shadowRoot;
     templateId = 'friends-app-tpl';
     elementId = 'Friends-app';

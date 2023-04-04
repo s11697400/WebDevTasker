@@ -9,7 +9,7 @@
 <script type="text/javascript">
       var onloadCallback = function() {
         grecaptcha.render('recaptcha-div', {
-          'sitekey' : '6LdWabUUAAAAAOjwtemOAbQ5wcipR4UoAWNWA0uJ'
+            'sitekey': '6LdOD68ZAAAAAMdqKTsNYv7mNDcGzBn0KJbkm9iT'
         });
       };
     </script>
@@ -17,7 +17,7 @@
 <form method="POST" action="/Contact/Result">
     <input type="text" name="Naam" placeholder="Uw naam" maxlength="40" required/>
     <input type="number" name="Id" placeholder="Id" />
-     <div id="recaptcha-div" class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LdWabUUAAAAAOjwtemOAbQ5wcipR4UoAWNWA0uJ"></div>
+    <div id="recaptcha-div" class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LdOD68ZAAAAAMdqKTsNYv7mNDcGzBn0KJbkm9iT"></div>
 
     <input type="submit" id="submitBtn" value="Verzenden" disabled/>
 
