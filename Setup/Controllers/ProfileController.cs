@@ -4,7 +4,8 @@ using Setup.Models;
 
 namespace Setup.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "RequireAdministratorRole")]
+
     public class ProfileController : Controller
     {
         public IActionResult Index(Developer developer)

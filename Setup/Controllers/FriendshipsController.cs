@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Xml;
 using Microsoft.AspNetCore.Authorization;
@@ -31,7 +32,7 @@ namespace Setup.Controllers
         {
             _context = context;
         }
-        public static void SetPropertyValue<T, TValue>( T target, Expression<Func<T, TValue>> memberLamda, TValue value)
+        public static void SetPropertyValue<T, TValue>(T target, Expression<Func<T, TValue>> memberLamda, TValue value)
         {
             var memberSelectorExpression = memberLamda.Body as MemberExpression;
             if (memberSelectorExpression != null)
@@ -68,7 +69,7 @@ namespace Setup.Controllers
             {
                 return NotFound();
             }
-    
+
             await _context.Friends.Where(f => f.UserId1 == id).ForEachAsync(async (f) =>
            {
                var user = findUserName(f.UserId1).Result;
@@ -80,7 +81,7 @@ namespace Setup.Controllers
 
            });
             var friendship = await _context.Friends.Where(f => f.UserId1 == id).ToListAsync();
-       
+
             if (friendship == null)
             {
                 return NotFound();
@@ -96,12 +97,12 @@ namespace Setup.Controllers
         public async Task<IActionResult> PutFriendship(int? id)
         {
             Console.WriteLine("PUTTTTT");
-             if(_context.Friends.FindAsync(id).Result == null) 
+            if (_context.Friends.FindAsync(id).Result == null)
             {
                 return NotFound();
             }
             var originalFriendship = _context.Friends.Where(f => f.FriendshipId == id).FirstOrDefault();
-            
+
             var friendship = _context.Friends.Where(f => (f.UserId2 == originalFriendship.UserId2 && f.UserId1 == originalFriendship.UserId1)).FirstOrDefaultAsync().Result;
             if (friendship == null)
             {
@@ -143,9 +144,10 @@ namespace Setup.Controllers
         [HttpPost]
         public async Task<ActionResult<Friendship>> PostFriendship(Friendship friendship)
         {
-          /*  Console.WriteLine(friendship.UserId1);
-            Console.WriteLine(friendship.UserName2);
-            return Ok(friendship.UserName2);*/
+            /*  Console.WriteLine(friendship.UserId1);
+              Console.WriteLine(friendship.UserName2);
+              return Ok(friendship.UserName2);*/
+
             if (_context.Friends == null)
             {
                 return Problem("Entity set 'PersonDatabaseContext.Friends'  is null.");
@@ -154,9 +156,11 @@ namespace Setup.Controllers
             {
                 return NoContent();
             }
+
             var userId1 = _context.authUsers.Where(f => f.UserName == friendship.UserName2).FirstOrDefault().Id;
             friendship.UserId2 = friendship.UserId1;
             friendship.UserId1 = userId1;
+          
             _context.Friends.Add(friendship);
             try
             {

@@ -18,7 +18,7 @@ namespace Setup.Models
         [Required]
         public string Email { get; set; }
 
-        [InverseProperty("User1")]
+      
         public List<Friendship> Friends { get; set; }
 
 
